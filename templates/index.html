@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Index
+{% endblock %}
+
+{% block headline %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<p>{{ message }}</p>
+<p>Total：{{ data | list_sum }}</p>
+<pre>{{ data }}</pre>
+<p>total: {{total(100)}}</p>
+{% endblock %}
+
+{% block footer %}
+copyright 2021 Yuki_Tokieda
+{% endblock %}

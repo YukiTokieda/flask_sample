@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Predict_Page
+{% endblock %}
+
+{% block headline %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<p>{{ message }}</p>
+<form method="post" action="/predict">
+  <ul>
+    <li>
+      <p>坪単価：<input type="number" name="tsubo" value="{{ tsubo }}"  min="0"></p>
+    </li>
+    <li>
+      <p>坪数：<input type="number" name="tsubo_su" value="{{ tsubo_su }}" step="0.01" min="0"></p>
+    </li>
+    <li>
+      <p>建ぺい率：<input type="number" name="kenpei" value="{{ kenpei }}" step="0.001" max="1" min="0.001"></p>
+    </li>
+    <li>
+      <p>建物単価：<input type="number" name="building" value="{{ building }}"  min="0"></p>
+    </li>
+    <li>
+      <p>施主年齢：<input type="number" name="age" value="{{ age }}" max="100" min="0"></p>
+    </li>
+    <li>
+      <p>施主年数：<input type="number" name="birth" value="{{ birth }}" max="2020" min="1900"></p>
+    </li>
+    <li><p>地域：
+      <select name="area" value="{{ area }}">
+        <option value="a">A</option>
+        <option value="b">B</option>
+        <option value="c">C</option>
+        <option value="d">D</option>
+      </select></p>
+</li>
+  </ul>
+ <input type="submit">
+</form>
+{% endblock %}
+
+{% block footer %}
+copyright 2021 Yuki_Tokieda
+{% endblock %}
